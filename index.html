@@ -3,11 +3,19 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Lista de tareas básica</title>
+    <title>Lista de tareas mejorada</title>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #f0f8ff; padding: 20px; }
+        h1 { color: #333; }
+        h2 { color: #555; }
+        input, button { padding: 10px; margin-top: 10px; font-size: 16px; }
+        ul { margin-top: 20px; }
+        li { background: #d9eaff; margin-bottom: 5px; padding: 10px; border-radius: 5px; }
+    </style>
 </head>
 <body>
     <h1>Lista de tareas</h1>
-	<h2>Apunta lo pendientes</h2>
+    <h2>Organiza tus pendientes fácilmente</h2>
     <input type="text" id="tarea" placeholder="Escribe una tarea" />
     <button onclick="agregarTarea()">Agregar</button>
     <ul id="lista"></ul>

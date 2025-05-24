@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Lista de tareas básica</title>
+</head>
+<body>
+    <h1>Lista de tareas</h1>
+    <input type="text" id="tarea" placeholder="Escribe una tarea" />
+    <button onclick="agregarTarea()">Agregar</button>
+    <ul id="lista"></ul>
+
+    <script>
+        function agregarTarea() {
+            const tareaInput = document.getElementById('tarea');
+            const tarea = tareaInput.value.trim();
+            if (tarea === '') return;
+            const lista = document.getElementById('lista');
+            const li = document.createElement('li');
+            li.textContent = tarea;
+            lista.appendChild(li);
+            tareaInput.value = '';
+        }
+    </script>
+</body>
+</html>

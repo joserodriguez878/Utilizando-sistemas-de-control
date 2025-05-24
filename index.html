@@ -3,22 +3,44 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Lista de tareas básica</title>
+    <title>Lista de tareas con prioridad</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f9fafb; padding: 25px; }
+        h1 { color: #2c3e50; }
+        h2 { color: #34495e; }
+        input, select, button { padding: 10px; margin-top: 10px; font-size: 16px; }
+        ul { margin-top: 20px; }
+        li { background: #e3f2fd; margin-bottom: 6px; padding: 10px; border-radius: 6px; }
+        .alta { color: #c0392b; font-weight: bold; }
+        .media { color: #f39c12; }
+        .baja { color: #27ae60; }
+    </style>
 </head>
 <body>
     <h1>Lista de tareas</h1>
+    <h2>Agrega prioridades a tus tareas</h2>
+
     <input type="text" id="tarea" placeholder="Escribe una tarea" />
+    <select id="prioridad">
+        <option value="baja">Baja</option>
+        <option value="media">Media</option>
+        <option value="alta">Alta</option>
+    </select>
     <button onclick="agregarTarea()">Agregar</button>
+
     <ul id="lista"></ul>
 
     <script>
         function agregarTarea() {
             const tareaInput = document.getElementById('tarea');
+            const prioridadSelect = document.getElementById('prioridad');
             const tarea = tareaInput.value.trim();
+            const prioridad = prioridadSelect.value;
             if (tarea === '') return;
             const lista = document.getElementById('lista');
             const li = document.createElement('li');
-            li.textContent = tarea;
+            li.textContent = tarea + ' (' + prioridad + ')';
+            li.className = prioridad;
             lista.appendChild(li);
             tareaInput.value = '';
         }
